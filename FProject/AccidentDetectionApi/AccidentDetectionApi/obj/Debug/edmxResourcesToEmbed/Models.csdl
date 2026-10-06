@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccidentDetectionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accident">
+    <Key>
+      <PropertyRef Name="Accident_Id" />
+    </Key>
+    <Property Name="Accident_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Car_Id" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Impact_Side" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImpactForce" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CabinForce" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Severity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_Accident_Car" FromRole="Accident" ToRole="Car" />
+    <NavigationProperty Name="Alerts" Relationship="Self.FK_Alert_Accident" FromRole="Accident" ToRole="Alert" />
+  </EntityType>
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="Alert_Id" />
+    </Key>
+    <Property Name="Alert_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Accident_Id" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Accident" Relationship="Self.FK_Alert_Accident" FromRole="Alert" ToRole="Accident" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Car_Id" />
+    </Key>
+    <Property Name="Car_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Registration_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Make" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Uid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Category_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Accidents" Relationship="Self.FK_Accident_Car" FromRole="Car" ToRole="Accident" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Car_Category" FromRole="Car" ToRole="Category" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Car_User" FromRole="Car" ToRole="User" />
+    <Property Name="Steering_Side" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Weight" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Car_Category" FromRole="Category" ToRole="Car" />
+    <NavigationProperty Name="Nodes" Relationship="Self.FK_Nodes_Category" FromRole="Category" ToRole="Nodes" />
+  </EntityType>
+  <EntityType Name="FamilyMember">
+    <Key>
+      <PropertyRef Name="Uid" />
+      <PropertyRef Name="Guardian_Id" />
+    </Key>
+    <Property Name="Family_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Guardian_Id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_FamilyMembers_Guardian" FromRole="FamilyMembers" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_FamilyMembers_User" FromRole="FamilyMembers" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Node">
+    <Key>
+      <PropertyRef Name="Node_Id" />
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Node_Id" Type="Int32" Nullable="false" />
+    <Property Name="Category_Id" Type="Int32" Nullable="false" />
+    <Property Name="Node_Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Force" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Nodes_Category" FromRole="Nodes" ToRole="Category" />
+    <NavigationProperty Name="NodeConnections" Relationship="AccidentDetectionDBModel.FK_NodeConn_From" FromRole="Node" ToRole="NodeConnection" />
+    <NavigationProperty Name="NodeConnections1" Relationship="AccidentDetectionDBModel.FK_NodeConn_To" FromRole="Node" ToRole="NodeConnection" />
+  </EntityType>
+  <EntityType Name="Rescue">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Car_User" FromRole="User" ToRole="Car" />
+    <NavigationProperty Name="FamilyMembers" Relationship="Self.FK_FamilyMembers_Guardian" FromRole="User" ToRole="FamilyMembers" />
+    <NavigationProperty Name="FamilyMembers1" Relationship="Self.FK_FamilyMembers_User" FromRole="User" ToRole="FamilyMembers" />
+  </EntityType>
+  <Association Name="FK_Accident_Car">
+    <End Role="Car" Type="Self.Car" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Accident" Type="Self.Accident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Car_Id" />
+      </Principal>
+      <Dependent Role="Accident">
+        <PropertyRef Name="Car_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alert_Accident">
+    <End Role="Accident" Type="Self.Accident" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Alert" Type="Self.Alert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accident">
+        <PropertyRef Name="Accident_Id" />
+      </Principal>
+      <Dependent Role="Alert">
+        <PropertyRef Name="Accident_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Nodes_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Nodes" Type="Self.Node" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="Nodes">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyMembers_Guardian">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="FamilyMembers" Type="Self.FamilyMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="FamilyMembers">
+        <PropertyRef Name="Guardian_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyMembers_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FamilyMembers" Type="Self.FamilyMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="FamilyMembers">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AccidentDetectionDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accidents" EntityType="Self.Accident" />
+    <EntitySet Name="Alerts" EntityType="Self.Alert" />
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="FamilyMembers" EntityType="Self.FamilyMember" />
+    <EntitySet Name="Nodes" EntityType="Self.Node" />
+    <EntitySet Name="Rescues" EntityType="Self.Rescue" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Accident_Car" Association="Self.FK_Accident_Car">
+      <End Role="Car" EntitySet="Cars" />
+      <End Role="Accident" EntitySet="Accidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alert_Accident" Association="Self.FK_Alert_Accident">
+      <End Role="Accident" EntitySet="Accidents" />
+      <End Role="Alert" EntitySet="Alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_Category" Association="Self.FK_Car_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_User" Association="Self.FK_Car_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Nodes_Category" Association="Self.FK_Nodes_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Nodes" EntitySet="Nodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyMembers_Guardian" Association="Self.FK_FamilyMembers_Guardian">
+      <End Role="User" EntitySet="Users" />
+      <End Role="FamilyMembers" EntitySet="FamilyMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyMembers_User" Association="Self.FK_FamilyMembers_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="FamilyMembers" EntitySet="FamilyMembers" />
+    </AssociationSet>
+    <EntitySet Name="NodeConnections" EntityType="AccidentDetectionDBModel.NodeConnection" />
+    <AssociationSet Name="FK_NodeConn_From" Association="AccidentDetectionDBModel.FK_NodeConn_From">
+      <End Role="Node" EntitySet="Nodes" />
+      <End Role="NodeConnection" EntitySet="NodeConnections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NodeConn_To" Association="AccidentDetectionDBModel.FK_NodeConn_To">
+      <End Role="Node" EntitySet="Nodes" />
+      <End Role="NodeConnection" EntitySet="NodeConnections" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NodeConnection">
+    <Key>
+      <PropertyRef Name="Connection_Id" />
+    </Key>
+    <Property Name="Connection_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="From_Node" Type="Int32" Nullable="false" />
+    <Property Name="To_Node" Type="Int32" Nullable="false" />
+    <Property Name="Category_Id" Type="Int32" Nullable="false" />
+    <Property Name="Is_Cabin_Deadend" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Node" Relationship="AccidentDetectionDBModel.FK_NodeConn_From" FromRole="NodeConnection" ToRole="Node" />
+    <NavigationProperty Name="Node1" Relationship="AccidentDetectionDBModel.FK_NodeConn_To" FromRole="NodeConnection" ToRole="Node" />
+  </EntityType>
+  <Association Name="FK_NodeConn_From">
+    <End Type="AccidentDetectionDBModel.Node" Role="Node" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AccidentDetectionDBModel.NodeConnection" Role="NodeConnection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Node_Id" />
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="NodeConnection">
+        <PropertyRef Name="From_Node" />
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NodeConn_To">
+    <End Type="AccidentDetectionDBModel.Node" Role="Node" Multiplicity="1" />
+    <End Type="AccidentDetectionDBModel.NodeConnection" Role="NodeConnection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Node_Id" />
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="NodeConnection">
+        <PropertyRef Name="To_Node" />
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

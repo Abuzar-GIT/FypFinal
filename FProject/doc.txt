@@ -1,0 +1,10 @@
+ Database IDs: Sedan = 1 ,nodes=30 , SUV = 2 ,nodes=25, Hatchback = 3,nodes=23
+line 707 nodes colr and position
+category 2
+nodeconnection=34
+category 1
+nodeconnection=170
+category 3
+nodeconnection=29
+sedan =14
+suv =9

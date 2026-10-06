@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccidentDetectionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accident">
+    <Key>
+      <PropertyRef Name="Accident_Id" />
+    </Key>
+    <Property Name="Accident_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Car_Id" Type="int" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="255" />
+    <Property Name="Impact_Side" Type="varchar" MaxLength="50" />
+    <Property Name="ImpactForce" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CabinForce" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Severity" Type="varchar" MaxLength="50" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="Alert_Id" />
+    </Key>
+    <Property Name="Alert_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Accident_Id" Type="int" Nullable="false" />
+    <Property Name="Time" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Car_Id" />
+    </Key>
+    <Property Name="Car_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Registration_No" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Make" Type="varchar" MaxLength="100" />
+    <Property Name="Uid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Category_Id" Type="int" Nullable="false" />
+    <Property Name="Steering_Side" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Weight" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="FamilyMembers">
+    <Key>
+      <PropertyRef Name="Uid" />
+      <PropertyRef Name="Guardian_Id" />
+    </Key>
+    <Property Name="Family_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Uid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Guardian_Id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Relationship" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NodeConnections">
+    <Key>
+      <PropertyRef Name="Connection_Id" />
+    </Key>
+    <Property Name="Connection_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_Node" Type="int" Nullable="false" />
+    <Property Name="To_Node" Type="int" Nullable="false" />
+    <Property Name="Category_Id" Type="int" Nullable="false" />
+    <Property Name="Is_Cabin_Deadend" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nodes">
+    <Key>
+      <PropertyRef Name="Node_Id" />
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Node_Id" Type="int" Nullable="false" />
+    <Property Name="Category_Id" Type="int" Nullable="false" />
+    <Property Name="Node_Position" Type="varchar" MaxLength="100" />
+    <Property Name="Force" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Rescue">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contact_No" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_Accident_Car">
+    <End Role="Car" Type="Self.Car" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Accident" Type="Self.Accident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Car_Id" />
+      </Principal>
+      <Dependent Role="Accident">
+        <PropertyRef Name="Car_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alert_Accident">
+    <End Role="Accident" Type="Self.Accident" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Alert" Type="Self.Alert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accident">
+        <PropertyRef Name="Accident_Id" />
+      </Principal>
+      <Dependent Role="Alert">
+        <PropertyRef Name="Accident_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyMembers_Guardian">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="FamilyMembers" Type="Self.FamilyMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="FamilyMembers">
+        <PropertyRef Name="Guardian_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyMembers_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FamilyMembers" Type="Self.FamilyMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="FamilyMembers">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NodeConn_From">
+    <End Role="Nodes" Type="Self.Nodes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NodeConnections" Type="Self.NodeConnections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nodes">
+        <PropertyRef Name="Node_Id" />
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="NodeConnections">
+        <PropertyRef Name="From_Node" />
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NodeConn_To">
+    <End Role="Nodes" Type="Self.Nodes" Multiplicity="1" />
+    <End Role="NodeConnections" Type="Self.NodeConnections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nodes">
+        <PropertyRef Name="Node_Id" />
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="NodeConnections">
+        <PropertyRef Name="To_Node" />
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Nodes_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Nodes" Type="Self.Nodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_Id" />
+      </Principal>
+      <Dependent Role="Nodes">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AccidentDetectionDBModelStoreContainer">
+    <EntitySet Name="Accident" EntityType="Self.Accident" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alert" EntityType="Self.Alert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamilyMembers" EntityType="Self.FamilyMembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NodeConnections" EntityType="Self.NodeConnections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nodes" EntityType="Self.Nodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rescue" EntityType="Self.Rescue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Accident_Car" Association="Self.FK_Accident_Car">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Accident" EntitySet="Accident" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alert_Accident" Association="Self.FK_Alert_Accident">
+      <End Role="Accident" EntitySet="Accident" />
+      <End Role="Alert" EntitySet="Alert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_Category" Association="Self.FK_Car_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_User" Association="Self.FK_Car_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyMembers_Guardian" Association="Self.FK_FamilyMembers_Guardian">
+      <End Role="User" EntitySet="User" />
+      <End Role="FamilyMembers" EntitySet="FamilyMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyMembers_User" Association="Self.FK_FamilyMembers_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="FamilyMembers" EntitySet="FamilyMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NodeConn_From" Association="Self.FK_NodeConn_From">
+      <End Role="Nodes" EntitySet="Nodes" />
+      <End Role="NodeConnections" EntitySet="NodeConnections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NodeConn_To" Association="Self.FK_NodeConn_To">
+      <End Role="Nodes" EntitySet="Nodes" />
+      <End Role="NodeConnections" EntitySet="NodeConnections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Nodes_Category" Association="Self.FK_Nodes_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Nodes" EntitySet="Nodes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37710.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccidentDetectionApi", "AccidentDetectionApi\AccidentDetectionApi.csproj", "{93B59D05-39A9-4F52-92C2-D1A49F7A4901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93B59D05-39A9-4F52-92C2-D1A49F7A4901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B59D05-39A9-4F52-92C2-D1A49F7A4901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B59D05-39A9-4F52-92C2-D1A49F7A4901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B59D05-39A9-4F52-92C2-D1A49F7A4901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57E93A1F-C3B4-484A-8BD5-877633E260B0}
+	EndGlobalSection
+EndGlobal

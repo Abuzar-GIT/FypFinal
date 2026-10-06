@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b28d1a62cf6419b94d75b47875d6239" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Accident" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Alert" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Car" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.FamilyMember" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Node" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.Rescue" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.User" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_Accident_Car" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_Alert_Accident" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_Car_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_Car_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_Nodes_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_FamilyMembers_Guardian" ManuallyRouted="false" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_FamilyMembers_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AccidentDetectionDBModel.NodeConnection" Width="1.5" PointX="5.25" PointY="0.875" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_NodeConn_From" />
+        <AssociationConnector Association="AccidentDetectionDBModel.FK_NodeConn_To" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,229 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FProject\\AccidentDetectionApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|d:\\fproject\\accidentdetectionapi\\accidentdetectionapi\\controllers\\detectaccidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\detectaccidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\controllers\\configurenodescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\configurenodescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\models\\accidentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\models\\accidentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\accident.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\accident.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\nodeconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\nodeconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\controllers\\alertscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\alertscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\controllers\\familymemberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\familymemberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\familymember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\familymember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\accidentdetectionapi\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:accidentdetectionapi\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B59D05-39A9-4F52-92C2-D1A49F7A4901}|AccidentDetectionApi\\AccidentDetectionApi.csproj|solutionrelative:AccidentDetectionApi\\Car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DetectAccidentController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\DetectAccidentController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\DetectAccidentController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\DetectAccidentController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\DetectAccidentController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA1wAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T04:55:38.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NodeConnection.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\NodeConnection.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\NodeConnection.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\NodeConnection.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\NodeConnection.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:15:35.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccidentRequest.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Models\\AccidentRequest.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Models\\AccidentRequest.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Models\\AccidentRequest.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Models\\AccidentRequest.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T14:23:45.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConfigureNodesController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\ConfigureNodesController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\ConfigureNodesController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\ConfigureNodesController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\ConfigureNodesController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAIwGwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:15:46.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Accident.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Accident.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Accident.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Accident.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Accident.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T18:07:03.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwCYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:10:35.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AlertsController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\AlertsController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\AlertsController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\AlertsController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\AlertsController.cs",
+              "ViewState": "AgIAAH8BAAAAAAAAAAAkwHsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:18:23.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FamilyMembersController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\FamilyMembersController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\FamilyMembersController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\FamilyMembersController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\FamilyMembersController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwB4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:16:10.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FamilyMember.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\FamilyMember.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\FamilyMember.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\FamilyMember.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\FamilyMember.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:16:15.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Alert.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Alert.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Alert.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Alert.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Alert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:22:54.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LocationController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\LocationController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\LocationController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\LocationController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\LocationController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwCUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T05:11:06.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserSelectVehicleController.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Controllers\\UserSelectVehicleController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwC0BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-19T09:34:50.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Car.cs",
+              "RelativeDocumentMoniker": "AccidentDetectionApi\\Car.cs",
+              "ToolTip": "D:\\FProject\\AccidentDetectionApi\\AccidentDetectionApi\\Car.cs",
+              "RelativeToolTip": "AccidentDetectionApi\\Car.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T15:36:35.128Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
